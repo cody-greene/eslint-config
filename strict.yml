@@ -1,0 +1,29 @@
+#### eslint@1.10.3 ####
+extends: './lax.yml'
+rules:
+  ##### Possible Errors #####
+  no-console: 1
+  no-debugger: 1
+
+  ##### Best Practices #####
+  no-alert: 1
+  no-caller: 2
+  no-multi-spaces: 1 # fixable
+
+  ##### Stylistic Issues #####
+  array-bracket-spacing: 1 # fixable
+  block-spacing: 1 # fixable
+  brace-style: [1, 'stroustrup', {allowSingleLine: true}]
+  func-style: [1, 'declaration', {allowArrowFunctions: true}]
+  indent: [1, 2, {SwitchCase: 0}] # fixable
+  key-spacing: 1
+  no-spaced-func: 1 # fixable
+  object-curly-spacing: 1 # fixable
+  operator-linebreak: [1, 'before', {overrides: {'=': 'after'}}]
+  quotes: [1, 'single', 'avoid-escape'] # fixable
+  semi: [1, 'never'] # fixable
+  space-after-keywords: 1 # fixable
+  space-before-function-paren: [1, {anonymous: 'always', named: 'never'}] # fixable
+  space-in-parens: 1
+  space-return-throw-case: 1 # fixable
+  space-unary-ops: 1 # fixable
