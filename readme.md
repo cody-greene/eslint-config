@@ -11,9 +11,17 @@ To configure a project, add something like this to `package.json`:
   "eslintConfig": {
     "root": true,
     "extends": "./node_modules/eslint-config/strict.yml",
-    "env": {"browser": true, "commonjs": true, "es6": true},
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      },
+      "sourceType": "module"
     }
   },
   "devDependencies": {
@@ -30,14 +38,13 @@ To configure a project, add something like this to `package.json`:
 array-bracket-spacing
 eqeqeq
 indent
+keyword-spacing
 no-multi-spaces
 no-spaced-func
 object-curly-spacing
 quotes
 semi
-space-after-keywords
 space-before-function-paren
-space-return-throw-case
 space-unary-ops
 ```
 
@@ -171,7 +178,7 @@ function test(){ return 'hello' }
 const test = () => 'hello'
 ```
 
-- [no-sequences](#no-sequences)<a name='no-sequences'></a> Use one `var/let/const` declaration per variable
+- [one-var-declaration-per-line](#one-var-declaration-per-line)<a name='one-var-declaration-per-line'></a> Use one `var/let/const` declaration per variable
 > Why? It's easier to add/remove variables without messing with commas
 
 ```javascript
