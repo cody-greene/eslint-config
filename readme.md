@@ -57,7 +57,7 @@ space-unary-ops
 
 - [indent](#indent)<a name='indent'></a> Use soft tabs set to 2 spaces (editor config). And try to limit lines to 100 columns. A complete `.editorconfig` is also provided. Install the plugin for [sublime, vim, etc][] if you'd rather have per-project indentation settings.
 
-> Why? Same line-length & indentation when looking at the editor, the terminal, or github
+> Why? Same line-length & indentation when looking at the editor, the terminal, or github. Viewing hard-tabs properly in the terminal means adding `tabs -2` to `~/.profile` as well as setting `git config --global core.pager 'less --tabs=1,3 --RAW-CONTROL-CHARS'`. Viewing tabs on github as less than the default 8-spaces requires a browser extension.
 
 - [semi](#semi)<a name='semi'></a> Never use semicolons
 
@@ -183,8 +183,8 @@ const test = () => 'hello'
 
 - [one-var-declaration-per-line](#one-var-declaration-per-line)<a name='one-var-declaration-per-line'></a> Use one `var/let/const` declaration per variable
 
-> Why? It's easier to add/remove variables without messing with commas
-> v8 will de-optimize any blocks containing `let foo, bar` (but not `var foo, bar`)
+> Why? It's easier to add/remove variables without messing with commas.
+> Also, v8 will de-optimize any blocks containing `let foo, bar` (but not `var foo, bar`)
 
 ```javascript
 // bad
