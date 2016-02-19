@@ -1,3 +1,5 @@
+> eslint@^2.2.0
+
 ### Usage
 This package offers two [eslint config][] files:
 - [lax.yml](lax.yml) only includes rules that help catch errors while promoting best practices
@@ -30,7 +32,7 @@ To configure a project, add something like this to `package.json`:
 }
 ```
 
-> Once the project is configured, make sure the appropriate [eslint plugin][] is installed.
+> Once the project is configured, make sure the appropriate [eslint plugin][] is installed for real-time feedback.
 
 ### Auto formatting
 `eslint --fix <file>` will automatically fix several issues from the `strict.yml` ruleset, including:
@@ -53,7 +55,8 @@ space-unary-ops
 
 - [eol-last](#eol-last)<a name='eol-last'></a> End files with a single newline character (configure your editor to do this automatically)
 
-- [indent](#indent)<a name='indent'></a> Use soft tabs set to 2 spaces (editor config). And try to limit lines to 100 columns
+- [indent](#indent)<a name='indent'></a> Use soft tabs set to 2 spaces (editor config). And try to limit lines to 100 columns. A complete `.editorconfig` is also provided. Install the plugin for [sublime, vim, etc][] if you'd rather have per-project indentation settings.
+
 > Why? Same line-length & indentation when looking at the editor, the terminal, or github
 
 - [semi](#semi)<a name='semi'></a> Never use semicolons
@@ -179,7 +182,9 @@ const test = () => 'hello'
 ```
 
 - [one-var-declaration-per-line](#one-var-declaration-per-line)<a name='one-var-declaration-per-line'></a> Use one `var/let/const` declaration per variable
+
 > Why? It's easier to add/remove variables without messing with commas
+> v8 will de-optimize any blocks containing `let foo, bar` (but not `var foo, bar`)
 
 ```javascript
 // bad
@@ -246,3 +251,4 @@ for (let index = 0; index < attendeeList.length; ++index) {
 
 [eslint config]: http://eslint.org/docs/rules
 [eslint plugin]: http://eslint.org/docs/user-guide/integrations
+[sublime, vim, etc]: http://editorconfig.org/#download
