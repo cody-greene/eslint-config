@@ -49,7 +49,6 @@ rules:
 
   ##### Stylistic Issues #####
   new-parens: 1
-  no-delete-var: 1
   no-mixed-spaces-and-tabs: 2
 
   #### ECMAScript 6 ####
