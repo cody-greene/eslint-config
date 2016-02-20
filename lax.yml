@@ -44,12 +44,13 @@ rules:
   no-shadow-restricted-names: 1
   no-undef-init: 2
   no-undef: 1
-  no-unused-vars: 1
+  no-unused-vars: [2, {args: 'all', argsIgnorePattern: '^_'}]
   no-use-before-define: [2, 'nofunc']
 
   ##### Stylistic Issues #####
   new-parens: 1
   no-mixed-spaces-and-tabs: 2
+  no-unneeded-ternary: [2, {defaultAssignment: false}]
 
   #### ECMAScript 6 ####
   no-class-assign: 2
