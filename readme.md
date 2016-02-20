@@ -47,6 +47,7 @@ object-curly-spacing
 quotes
 semi
 space-before-function-paren
+space-infix-ops
 space-unary-ops
 ```
 
@@ -55,11 +56,11 @@ space-unary-ops
 
 - [eol-last](#eol-last)<a name='eol-last'></a> End files with a single newline character (configure your editor to do this automatically)
 
-- [indent](#indent)<a name='indent'></a> Use soft tabs set to 2 spaces (editor config). And try to limit lines to 100 columns. A complete `.editorconfig` is also provided. Install the plugin for [sublime, vim, etc][] if you'd rather have per-project indentation settings.
+- [indent](#indent)<a name='indent'></a> Use hard tabs (editor config). And try to limit lines to 100 columns. A complete `.editorconfig` is also provided. Install the plugin for [sublime, vim, etc][] if you'd rather have per-project indentation settings.
 
-> Why? Same line-length & indentation when looking at the editor, the terminal, or github. Viewing hard-tabs properly in the terminal means adding `tabs -2` to `~/.profile` as well as setting `git config --global core.pager 'less --tabs=1,3 --RAW-CONTROL-CHARS'`. Viewing tabs on github as less than the default 8-spaces requires a browser extension.
+> Viewing hard tabs properly in the terminal means adding `tabs -2` to `~/.profile` as well as setting `git config --global core.pager 'less --tabs=1,3 --RAW-CONTROL-CHARS'`. Viewing tabs on github as less than the default 8-spaces requires a browser extension.
 
-- [semi](#semi)<a name='semi'></a> Never use semicolons
+- [semi](#semi)<a name='semi'></a> Always use semicolons (yes, even though they're unecessary)
 
 - [quotes](#quotes)<a name='quotes'></a> Use `'single-quotes'` except when avoiding escape sequences e.g. an apostrophe
 
@@ -67,13 +68,13 @@ space-unary-ops
 ```javascript
 // bad
 doSomething(function(err, res) {
-  console.log(err, res)
-})
+  console.log(err, res);
+});
 
 // good
 doSometing(function (err, res) {
-  console.log(err, res)
-})
+  console.log(err, res);
+});
 ```
 
 - [no-space-func](#no-space-func)<a name='no-spaced-func'></a> Place no space between a function name the the arguments list
@@ -82,12 +83,12 @@ doSometing(function (err, res) {
 ```javascript
 // bad
 if(isJedi) {
-  fight ()
+  fight ();
 }
 
 // good
 if (isJedi) {
-  fight()
+  fight();
 }
 ```
 
@@ -95,24 +96,24 @@ if (isJedi) {
 ```javascript
 // bad
 if (foo){
-  bar()
+  bar();
 }else
 {
-  baz()
+  baz();
 }
 
 // good
 if (foo) {
-  bar()
+  bar();
 }
 else {
-  baz()
+  baz();
 }
 
 // exception: one-liners (good)
-function test(){ return 'test' }
-if (foo) bar()
-else baz()
+function test(){ return 'test'; }
+if (foo) bar();
+else baz();
 ```
 
 - [block-spacing](#block-spacing) <a name='block-spacing'></a> Do not pad your blocks with blank lines
@@ -120,15 +121,15 @@ else baz()
 // bad
 function bar() {
 
-  console.log(foo)
+  console.log(foo);
 
 }
 
 // good
 if (baz) {
-  console.log(qux)
+  console.log(qux);
 } else {
-  console.log(foo)
+  console.log(foo);
 }
 ```
 
@@ -136,24 +137,24 @@ if (baz) {
 ```javascript
 // bad
 function bar( foo ) {
-  return foo + baz( qux )
+  return foo + baz( qux );
 }
 
 // good
 if (foo) {
-  console.log(foo)
+  console.log(foo);
 }
 ```
 
 - [array-bracket-spacing](#array-bracket-spacing) <a name='array-bracket-spacing'></a> Do not add spaces inside brackets
 ```javascript
 // bad
-const foo = [ 1, 2, 3 ]
-console.log(foo[ 0 ])
+const foo = [ 1, 2, 3 ];
+console.log(foo[ 0 ]);
 
 // good
-const foo = [1, 2, 3]
-console.log(foo[0])
+const foo = [1, 2, 3];
+console.log(foo[0]);
 ```
 
 - [operator-linebreak](#operator-linebreak)<a name='operator-linebreak'></a> When a statement is too long to fit on a single line, insert line breaks before operators
@@ -172,13 +173,13 @@ if (someCondition
 - [func-style](#func-style)<a name='func-style'></a> Use function declarations instead of function expressions
 ```javascript
 // bad
-const test = function (){ return 'hello' }
+const test = function (){ return 'hello' };
 
 // good
 function test(){ return 'hello' }
 
 // exception: arrow-functions
-const test = () => 'hello'
+const test = () => 'hello';
 ```
 
 - [one-var-declaration-per-line](#one-var-declaration-per-line)<a name='one-var-declaration-per-line'></a> Use one `var/let/const` declaration per variable
@@ -190,12 +191,12 @@ const test = () => 'hello'
 // bad
 const foo = 867
   , bar = 53
-  , baz = 0.9
+  , baz = 0.9;
 
 // good
-const foo = 867
-const bar = 53
-const baz = 0.9
+const foo = 867;
+const bar = 53;
+const baz = 0.9;
 ```
 
 - [comments](#comments)<a name='comments'></a> Use `/** ... */` for multi-line jsdoc style comments
@@ -226,10 +227,10 @@ function enqueue(redis, opt, done) {}
 ```javascript
 class Calculator extends Abacus {
   constructor() {
-    super()
+    super();
 
     // TODO: total should be configurable by an options param
-    this.total = 0
+    this.total = 0;
   }
 }
 ```
@@ -238,15 +239,41 @@ class Calculator extends Abacus {
 ```javascript
 // bad
 for (let i = 0; i < list.length; ++i) {
-  let e = list[i]
-  console.log(i, e)
+  let e = list[i];
+  console.log(i, e);
 }
 
 // good
 for (let index = 0; index < attendeeList.length; ++index) {
-  let person = attendeeList[index]
-  console.log(index, person)
+  let person = attendeeList[index];
+  console.log(index, person);
 }
+```
+
+- [no-unneeded-ternary](#no-unneeded-ternary)<a name='no-unneeded-ternary'></a> Don't use conditional expressions that can be expressed with simpler constructs
+```javascript
+// bad
+var isDefault = answer === 1 ? true : false;
+
+// good
+var isDefault = answer === 1;
+
+// bad
+var foo = foo ? foo : 1;
+
+// good
+var foo = foo || 1;
+```
+
+- [space-infix-ops](#space-infix-ops)<a name='space-infix-ops'></a> Add spaces around infix operators
+```javascript
+// bad
+var foo = 2+2;
+var bar = foo==='baz';
+
+// good
+var foo = 2 + 2;
+var bar = foo === 'baz';
 ```
 
 [eslint config]: http://eslint.org/docs/rules

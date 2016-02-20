@@ -50,6 +50,7 @@ rules:
   ##### Stylistic Issues #####
   new-parens: 1
   no-mixed-spaces-and-tabs: 2
+  no-unneeded-ternary: [2, {'defaultAssignment': false}]
 
   #### ECMAScript 6 ####
   no-class-assign: 2
