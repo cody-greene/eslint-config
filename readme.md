@@ -249,6 +249,32 @@ for (let index = 0; index < attendeeList.length; ++index) {
 }
 ```
 
+- [no-unneeded-ternary](#no-unneeded-ternary)<a name='no-unneeded-ternary'></a> Don't use conditional expressions that can be expressed with simpler constructs
+```javascript
+// bad
+var isDefault = answer === 1 ? true : false;
+
+// good
+var isDefault = answer === 1;
+
+// bad
+var foo = foo ? foo : 1;
+
+// good
+var foo = foo || 1;
+```
+
+#### Versioning this project
+`v<eslint-major>.<eslint-minor>.<config-version>[-cp]`
+
+example: eslint@2.2.0
+- release eslint-config@2.2.0
+- enable/change another rule
+- release eslint-config@2.2.1
+- eslint@2.3.0 released
+- update config with any new rules
+- release eslint-config@2.3.0
+
 [eslint config]: http://eslint.org/docs/rules
 [eslint plugin]: http://eslint.org/docs/user-guide/integrations
 [sublime, vim, etc]: http://editorconfig.org/#download
