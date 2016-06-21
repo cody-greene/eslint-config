@@ -6,7 +6,7 @@ rules:
 
   ##### Best Practices #####
   no-alert: 1
-  no-caller: 2
+  no-caller: 1
   no-multi-spaces: 1 # fixable
 
   ##### Stylistic Issues #####
