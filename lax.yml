@@ -22,7 +22,7 @@ rules:
 
   ##### Best Practices #####
   dot-notation: 1
-  eqeqeq: 1 # fixable
+  eqeqeq: [1, 'smart'] # fixable
   no-eval: 2
   no-extend-native: 1
   no-extra-bind: 1
