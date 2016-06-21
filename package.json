@@ -1,5 +1,4 @@
 {
-  "name": "eslint-config",
-  "version": "2.2.1",
-  "private": true
+  "name": "@cody-greene/eslint-config",
+  "version": "2.2.2"
 }
