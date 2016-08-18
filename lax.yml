@@ -51,6 +51,9 @@ rules:
   no-unneeded-ternary: ['warn', {defaultAssignment: false}]
 
   #### ECMAScript 6 ####
+  constructor-super: 'warn'
   no-class-assign: 'warn'
   no-const-assign: 'warn'
   no-dupe-class-members: 'warn'
+  no-this-before-super: 'warn'
+  require-yield: 'warn'
